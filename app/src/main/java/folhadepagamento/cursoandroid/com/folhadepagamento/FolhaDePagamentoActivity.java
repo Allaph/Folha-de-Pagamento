@@ -6,6 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import android.text.Editable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
+
 
 public class FolhaDePagamentoActivity extends AppCompatActivity {
 
@@ -38,12 +46,17 @@ public class FolhaDePagamentoActivity extends AppCompatActivity {
                 String salario = salarioFuncionario.getText().toString();
 
 
-                if (mes.isEmpty()){
-                    valorTotal.setText("Mês referente não declarado.");
-                }else{
+                if (salario.isEmpty()) {
+                    Validator.validateNotNull(salarioFuncionario, "Preencha o campo salário");
+                }else if (hora.isEmpty()){
+                    Validator.validateNotNull(horaExtra, "Preencha o campo Horas extras");
+                }else if (falta.isEmpty()) {
+                    Validator.validateNotNull(faltasMensais, "Preencha o campo faltas no mês");
+                }else if (mes.isEmpty()) {
+                    Validator.validateNotNull(mesReferente, "Preencha o campo mês referente");
+                }else {
 
                     int valorSalario = Integer.parseInt(salario);
-                    int contracheque = valorSalario;
 
                     int valorHora = Integer.parseInt(hora);
                     int valorTotalHora = (valorHora * 6) + valorSalario;
@@ -60,3 +73,4 @@ public class FolhaDePagamentoActivity extends AppCompatActivity {
 
     }
 }
+

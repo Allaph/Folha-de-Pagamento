@@ -7,10 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import android.text.Editable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private EditText nomeFuncionario;
     private Button acessarFolha;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
         acessarFolha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FolhaDePagamentoActivity.class));
+                String nomeDigitado = nomeFuncionario.getText().toString();
+                if (nomeDigitado.isEmpty()){
+                    Validator.validateNotNull(nomeFuncionario, "Preencha o campo nome");
+                }else{
+                    startActivity(new Intent(MainActivity.this, FolhaDePagamentoActivity.class));
+                }
             }
         });
 

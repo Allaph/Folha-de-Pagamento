@@ -21,10 +21,22 @@
         android:layout_alignParentEnd="true"
         android:textAppearance="@android:style/TextAppearance.Medium" />
 
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/valorSalarioId"
+        android:background="@android:color/darker_gray" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
         android:ems="10"
         android:layout_marginTop="34dp"
         android:id="@+id/faltasMensaisId"
@@ -84,7 +96,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:ems="10"
         android:id="@+id/horaExtraId"
         android:background="@android:color/darker_gray"
@@ -92,18 +104,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/valorSalarioId"
-        android:background="@android:color/darker_gray" />
 
     <TextView
-        android:text="Digite o salário"
+        android:text="Remuneração"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="29dp"
